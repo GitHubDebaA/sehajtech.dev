@@ -4,6 +4,9 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
+import Image from "next/image";
+import logo from "../../public/assets/logo.webp";
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -30,9 +33,21 @@ export default function Navbar() {
         <nav
             className="w-full transition-all duration-300 bg-neutral-50 shadow-md"
         >
-            <div className="relative max-w-7xl mx-auto px-6 py-6 lg:py-7 flex items-center">
+            <div className="relative max-w-7xl mx-auto px-6 py-6 lg:py-7 flex items-center justify-between">
                 {/* Left (optional future logo space) */}
-                <div></div>
+                <div className="md:hidden">
+                    <Link href="/">
+                        <div className="relative w-[140px] h-[40px]">
+                            <Image
+                                src={logo}
+                                alt="Sehajtech Logo"
+                                fill
+                                className="object-contain mix-blend-multiply"
+                                priority
+                            />
+                        </div>
+                    </Link>
+                </div>
 
                 {/* Center Menu */}
                 <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 text-base whitespace-nowrap">

@@ -5,7 +5,7 @@ import logo from "../../public/assets/logo.webp";
 
 export default function HeaderTop() {
     return (
-        <div className="w-full bg-white">
+        <div className="hidden md:block w-full bg-white">
             <div className="px-6 flex flex-col md:flex-row items-center">
 
                 {/* Left Container - Logo */}
