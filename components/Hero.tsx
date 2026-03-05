@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import Carousel, { CarouselSlide } from "@/components/ui/Carousel";
 import ClientsMarquee from "./ClientsMarquee";
+import GetInTouch from "./GetInTouch";
 
 export default function Hero() {
     const slides: CarouselSlide[] = [
@@ -91,6 +92,7 @@ export default function Hero() {
             </section>
 
             <ClientsMarquee />
+            <GetInTouch />
         </>
     );
 }
