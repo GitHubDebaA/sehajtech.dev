@@ -10,6 +10,16 @@ body {
 	color: var(--dark-text);
 }
 
+.swiper-pagination-bullet {
+	background-color: var(--primary-gold) !important;
+	opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: var(--primary-gold) !important;
+	opacity: 1;
+}
+
 /* Horizontal Marquee Animation */
 
 @keyframes marquee-left {
