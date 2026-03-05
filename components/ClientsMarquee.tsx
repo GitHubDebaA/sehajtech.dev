@@ -47,7 +47,7 @@ export default function ClientsMarquee() {
         <section className="w-full overflow-hidden relative">
             {/* Section Heading */}
             <div className="text-center mb-8 px-6">
-                <h2 className="text-4xl">
+                <h2 className="text-2xl md:text-4xl">
                     Our Esteemed Clients
                 </h2>
             </div>

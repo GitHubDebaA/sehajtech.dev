@@ -40,8 +40,8 @@ export default function Hero() {
                 align="left"
             />
 
-            <div className="text-center m-16">
-                <h1 className="text-4xl">Raising the bar in IT solutions, empowering your digital future</h1>
+            <div className="text-center m-8 my-16 md:m-16">
+                <h1 className="text-2xl md:text-4xl">Raising the bar in IT solutions, empowering your digital future</h1>
             </div>
 
             <section className="w-full bg-white mb-16">
