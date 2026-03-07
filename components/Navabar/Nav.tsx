@@ -1,13 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 import Image from "next/image";
-import logo from "../../public/assets/logo.webp";
+import logo from "../../public/assets/logo.png";
+
 
 export default function Navbar() {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -58,111 +62,12 @@ export default function Navbar() {
                             onMouseEnter={() => setActiveMenu(item.name)}
                             onMouseLeave={() => setActiveMenu(null)}
                         >
-                            <button className="flex items-center gap-1 group relative">
-                                <span className="group-hover:text-[#C5A000] transition">
+                            <Link href={item.link} className="flex items-center gap-1 group relative cursor-pointer">
+                                <span className={`transition ${pathname === item.link ? "text-[var(--primary-gold)]" : "group-hover:text-[var(--primary-gold)]"}`}>
                                     {item.name}
                                 </span>
-                                {item.name !== "About Us" && (
-                                    <ChevronDown size={16} />
-                                )}
-                                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#C5A000] group-hover:w-full transition-all duration-300"></span>
-                            </button>
-
-                            {/* Mega Dropdown */}
-                            {activeMenu === item.name && item.name !== "About Us" && (
-                                <div className="absolute left-1/2 -translate-x-1/2 top-14 bg-white shadow-2xl rounded-2xl p-10 w-[750px] grid grid-cols-3 gap-10">
-
-                                    {item.name === "Industries" && (
-                                        <>
-                                            <DropdownColumn
-                                                title="Enterprise"
-                                                items={[
-                                                    "Manufacturing",
-                                                    "Retail",
-                                                    "Healthcare",
-                                                ]}
-                                            />
-                                            <DropdownColumn
-                                                title="Technology"
-                                                items={[
-                                                    "IT Services",
-                                                    "FinTech",
-                                                    "EdTech",
-                                                ]}
-                                            />
-                                            <DropdownColumn
-                                                title="Public Sector"
-                                                items={[
-                                                    "Government",
-                                                    "Infrastructure",
-                                                    "Energy",
-                                                ]}
-                                            />
-                                        </>
-                                    )}
-
-                                    {item.name === "Solutions" && (
-                                        <>
-                                            <DropdownColumn
-                                                title="Salesforce"
-                                                items={[
-                                                    "LWC Development",
-                                                    "Apex Automation",
-                                                    "CRM Implementation",
-                                                ]}
-                                            />
-                                            <DropdownColumn
-                                                title="Web & Cloud"
-                                                items={[
-                                                    "Next.js Apps",
-                                                    "Cloud Architecture",
-                                                    "API Integrations",
-                                                ]}
-                                            />
-                                            <DropdownColumn
-                                                title="AI & Data"
-                                                items={[
-                                                    "Data Analytics",
-                                                    "AI Automation",
-                                                    "ML Integrations",
-                                                ]}
-                                            />
-                                        </>
-                                    )}
-
-                                    {item.name === "Our Clients" && (
-                                        <DropdownColumn
-                                            title="Client Portfolio"
-                                            items={[
-                                                "Enterprise Clients",
-                                                "Mid-size Businesses",
-                                                "Startups",
-                                            ]}
-                                        />
-                                    )}
-
-                                    {item.name === "Resources & Careers" && (
-                                        <>
-                                            <DropdownColumn
-                                                title="Resources"
-                                                items={[
-                                                    "Blogs",
-                                                    "Case Studies",
-                                                    "Whitepapers",
-                                                ]}
-                                            />
-                                            <DropdownColumn
-                                                title="Careers"
-                                                items={[
-                                                    "Open Positions",
-                                                    "Life at Sehajtech",
-                                                ]}
-                                            />
-                                        </>
-                                    )}
-
-                                </div>
-                            )}
+                                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[var(--primary-gold)] group-hover:w-full transition-all duration-300"></span>
+                            </Link>
                         </div>
                     ))}
                 </div>

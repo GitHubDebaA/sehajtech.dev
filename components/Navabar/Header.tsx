@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import logo from "../../public/assets/logo.webp";
+import Link from "next/link";
+
+import logo from "../../public/assets/logo.png";
 
 export default function HeaderTop() {
     return (
@@ -11,13 +13,15 @@ export default function HeaderTop() {
                 {/* Left Container - Logo */}
                 <div className="w-full md:basis-[30%] flex justify-center md:justify-start mb-4 md:mb-0">
                     <div className="relative w-full max-w-[220px] sm:max-w-[260px] md:max-w-[300px] h-[50px] sm:h-[60px] md:h-[70px]">
-                        <Image
-                            src={logo}
-                            alt="Sehajtech Logo"
-                            fill
-                            className="object-contain"
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                src={logo}
+                                alt="Sehajtech Logo"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </Link>
                     </div>
                 </div>
 
