@@ -52,7 +52,7 @@ export default function Leadership() {
                     </div>
 
                     {/* Right side */}
-                    <div className="grid md:grid-cols-2 gap-8 h-[260px]">
+                    <div className="grid md:grid-cols-2 gap-8">
 
                         {visibleLeaders.map((leader, index) => (
                             <div
