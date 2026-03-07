@@ -26,8 +26,7 @@ export default function HeaderTop() {
                 </div>
 
                 {/* Right Container - Awards */}
-                <div className="w-full md:basis-[70%] flex justify-center md:justify-start items-center gap-6 flex-wrap">
-
+                <div className="w-full md:basis-[70%] flex justify-center md:justify-start items-center gap-6 flex-wrap text-[var(--dark-text)]">
                     <div className="px-4 py-2 border rounded-lg text-sm">
                         🏆 Top IT Consultant 2025
                     </div>

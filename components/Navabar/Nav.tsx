@@ -63,7 +63,7 @@ export default function Navbar() {
                             onMouseLeave={() => setActiveMenu(null)}
                         >
                             <Link href={item.link} className="flex items-center gap-1 group relative cursor-pointer">
-                                <span className={`transition ${pathname === item.link ? "text-[var(--primary-gold)]" : "group-hover:text-[var(--primary-gold)]"}`}>
+                                <span className={`transition ${pathname === item.link ? "text-[var(--primary-gold)]" : "text-[var(--dark-text)] group-hover:text-[var(--primary-gold)]"}`}>
                                     {item.name}
                                 </span>
                                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[var(--primary-gold)] group-hover:w-full transition-all duration-300"></span>
